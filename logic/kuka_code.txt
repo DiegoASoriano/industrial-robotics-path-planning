@@ -33,11 +33,9 @@ LIN P_WELD_4     Vel=0.2 m/s CPDAT4 ; Point 5
 
 ; B-Pillar vertical seam
 LIN P_WELD_5     Vel=0.2 m/s CPDAT5 ; Point 6
-LIN P_WELD_6     Vel=0.2 m/s CPDAT6 ; Point 7
-LIN P_WELD_7     Vel=0.2 m/s CPDAT7 ; Point 8
 
 ; Final weld point
-LIN P_WELD_END   Vel=0.2 m/s CPDAT8 ; Point 9
+LIN P_WELD_END   Vel=0.2 m/s CPDAT8 ; Point 7
 
 ;-- 3. Retraction Sequence --
 $OUT[1] = FALSE ; Arc Off
