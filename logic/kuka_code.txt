@@ -1,0 +1,47 @@
+&ACCESS RVP
+&REL 1
+&PARAM TEMPLATE = C:\KRC\Roboter\Template\vorgabe
+&PARAM EDITMASK = *
+DEF welding_path( )
+;**********************************************************
+; Project: Automotive Door Welding Simulation
+; Robot: KUKA VKR 125/1 (Automotive Standard) 
+; Institution: BUAP, Mexico
+;**********************************************************
+
+;-- System Initialization --
+BAS (#INITMOV,0 ) 
+$TOOL = TOOL_DATA[1] ; Calibrated Welding Torch 
+$BASE = BASE_DATA[1] ; Car Door Frame Workpiece
+$VEL_AXIS[1] = 20    ; Reduced speed for safety validation
+
+;-- 1. Approach Sequence --
+PTP HOME Vel=100% DEFAULT
+PTP P_APPROACH Vel=50% PDAT1 ; Point 1: Safe approach
+
+;-- 2. Welding Path --
+; Starting the simulated welding process
+$OUT[1] = TRUE ; Arc On signal
+
+; Top edge of the door frame
+LIN P_WELD_START Vel=0.2 m/s CPDAT1 ; Point 2
+LIN P_WELD_2     Vel=0.2 m/s CPDAT2 ; Point 3
+LIN P_WELD_3     Vel=0.2 m/s CPDAT3 ; Point 4
+
+; Window 
+LIN P_WELD_4     Vel=0.2 m/s CPDAT4 ; Point 5
+
+; B-Pillar vertical seam
+LIN P_WELD_5     Vel=0.2 m/s CPDAT5 ; Point 6
+LIN P_WELD_6     Vel=0.2 m/s CPDAT6 ; Point 7
+LIN P_WELD_7     Vel=0.2 m/s CPDAT7 ; Point 8
+
+; Final weld point
+LIN P_WELD_END   Vel=0.2 m/s CPDAT8 ; Point 9
+
+;-- 3. Retraction Sequence --
+$OUT[1] = FALSE ; Arc Off
+LIN P_RETRACT Vel=0.5 m/s CPDAT9 ; Safe exit
+PTP HOME Vel=100% DEFAULT
+
+END
