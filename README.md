@@ -4,8 +4,6 @@
 ## Project Overview
 This project focuses on the design, programming, and validation of complex robotic trajectories using two industry-leading platforms: **KUKA** and **Stäubli**. The objective was to implement high-precision movements for automotive welding and logistics pick-and-place cycles, ensuring optimal TCP (Tool Center Point) orientation and collision-free operation in industrial environments.
 
-[Link to Demonstration Video: KUKA & Stäubli Workflows](#)
-
 ## Tech Stack
 * **Industrial Robots:** KUKA VKR 125/1 (Automotive Series) & Stäubli TX60 (CS8 Controller).
 * **Programming Languages:** V+ (VAL-II) and KRL (Kuka Robot Language).
@@ -42,6 +40,10 @@ To achieve professional-grade results, I implemented the following technical wor
 ---
 
 ## Technical Documentation
+
+| Kuka Welding Trajectory | Stäubli Pick and Place |
+| [Demonstration Video Kuka Welding Trajectory](https://youtube.com/shorts/9l5pwWcUczM?feature=share) | [Demonstration Video Stäubli Pick and Place](https://youtube.com/shorts/zleTPc8Thfo?feature=share) |
+| ![Kuka](media/Kuka_trajectory.png) | ![Staubli](media/Stäubli_shot.png) |
 
 ### Implementation Methodology
 * **KUKA VKR 125/1:** Focus on orientation control ($A4, A5, A6$ axes) to avoid singularities during the welding path.
