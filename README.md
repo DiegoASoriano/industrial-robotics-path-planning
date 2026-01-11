@@ -49,7 +49,7 @@ To achieve professional-grade results, I implemented the following technical wor
 
 ## Repository Structure
 * `/logic`: Text files with V+ and KRL scripts.
-* `/media`: Robot path videos.
+* `/media`: Robot path shots.
 
 ---
 **Contact Information**
