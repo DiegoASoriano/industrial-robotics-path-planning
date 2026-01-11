@@ -7,7 +7,7 @@ This project focuses on the design, programming, and validation of complex robot
 ## Tech Stack
 * **Industrial Robots:** KUKA VKR 125/1 (Automotive Series) & Stäubli TX60 (CS8 Controller).
 * **Programming Languages:** V+ (VAL-II) and KRL (Kuka Robot Language).
-* **Control Systems:** Teach Pendant.
+* **Control Systems:** Teach Pendant & HyperTerminal (Serial Communication).
 
 ---
 
