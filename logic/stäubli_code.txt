@@ -1,0 +1,40 @@
+.PROGRAM prog3.pg()
+  ; **********************************************************
+  ; Industrial Robotics Project: Automated Pick and Place
+  ; Developed at: Universidad de La Rioja, Spain
+  ; Language: V+ (VAL-II) / System: Staubli CS8
+  ; **********************************************************
+
+  READY             ; Reset robot to home position
+  
+  ; --- Approach Sequence (Points A) ---
+  MOVE #a1          ; Move to safe approach point
+  MOVES #a2         ; Linear move to pick-up zone
+  MOVES #a3
+  MOVES #a4
+  MOVES #a6
+  SIGNAL -8         ; Open gripper / Release
+  DEPARTS 200       ; Vertical clearance for safety
+  
+  ; --- Transition Sequence (Points B) ---
+  MOVES #b1         ; Move to intermediate transit point
+  MOVES #b2
+  MOVES #b3
+  MOVES #bueno      ; Targeted pick point
+  BREAK             ; Force full stop for precision
+  SIGNAL 8          ; Close gripper / Grasp part
+  DEPARTS 100       ; Lift piece 100mm
+  
+  ; --- Placement Sequence (Points C) ---
+  MOVES #bueno      ; Align with placement area
+  BREAK
+  SIGNAL -8         ; Drop part
+  BREAK
+  MOVES #c1         ; Begin exit trajectory
+  MOVES #c2
+  MOVES #c3
+  MOVES #c4
+  BREAK
+  SIGNAL 8          ; Reset gripper state
+  
+.END
