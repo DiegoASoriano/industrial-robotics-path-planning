@@ -44,7 +44,7 @@ To achieve professional-grade results, I implemented the following technical wor
 | Kuka Welding Trajectory | Stäubli Pick and Place |
 | :---: | :---: |
 | [Demonstration Video Kuka Welding Trajectory](https://youtube.com/shorts/9l5pwWcUczM?feature=share) | [Demonstration Video Stäubli Pick and Place](https://youtube.com/shorts/zleTPc8Thfo?feature=share) |
-| ![Kuka](media/Kuka_trajectory.png) | ![Staubli](media/Stäubli_shot.png) |
+| ![Kuka](media/Kuka_trajectory.png) | ![Staubli](media/Staubli_pick_place.png) |
 
 ### Implementation Methodology
 * **KUKA VKR 125/1:** Focus on orientation control ($A4, A5, A6$ axes) to avoid singularities during the welding path.
